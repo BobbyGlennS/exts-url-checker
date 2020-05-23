@@ -21,7 +21,7 @@ files <- list.files(path = path, pattern = file_pattern, recursive = TRUE)
 
 # filtering out unwanted files
 files <-
-  files[purrr::map_lgl(files, ~sum(str_detect(., files_not_include)) == 0)]
+  files[purrr::map_lgl(files, ~sum(stringr::str_detect(., files_not_include)) == 0)]
 
 # create paths
 file_paths <- file.path(path, files)
